@@ -4,21 +4,16 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import Connect from "./Mongoose/Connect.js";
 import authRoutes from "./Routes/auth.routes.js";
+import postRoutes from "./Routes/post.routes.js";
 let app=express();
 dotenv.config();
 app.use(cors());
 app.use(bodyParser.json());
-// app.use(express.json());
-
-
-
-
-
 
 
 //  Routes
 app.use("/auth",authRoutes);
-
+app.use("/post",postRoutes);
 app.get("/",(req,res)=>{
         res.send("Working..")
 })
