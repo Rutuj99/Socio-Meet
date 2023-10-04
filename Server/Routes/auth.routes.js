@@ -9,7 +9,6 @@ authRoutes.post("/register",async (req,res)=>{
          
          try{
             let data=req.body;
-            console.log(data);
             let value= await RegisterControll(data)
             res.status(201).send(value);
          }catch (err) {

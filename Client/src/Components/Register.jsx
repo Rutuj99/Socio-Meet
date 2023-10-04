@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 import {
   Input,
   InputGroup,
@@ -7,12 +9,15 @@ import {
   Button,
   Box,
 } from "@chakra-ui/react";
+import { useToast } from '@chakra-ui/react'
 import { EmailIcon } from "@chakra-ui/icons";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Register() {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
+  const toast = useToast();
+  let Navigate=useNavigate();
 
   let [fname, setfname] = useState("");
   let [lname, setlname] = useState("");
@@ -25,6 +30,7 @@ export default function Register() {
   let [Eemail, EsetEmail] = useState(false);
   let [Elocation, EsetLocation] = useState(false);
   let [Epass, EsetPass] = useState(false);
+  let [error, setError] = useState(false);
 
   function handleRegister(e) {
     e.preventDefault();
@@ -59,8 +65,49 @@ export default function Register() {
       EsetPass(true);
       return;
     }
+    // using backend-points to store data in mongoDB
 
-    alert("donee");
+    try {
+      axios
+        .post("http://localhost:3002/auth/register", {
+          firstName: fname,
+          lastName: lname,
+          email: email,
+          location: location,
+          password: pass,
+        })
+        .then((res) => {
+
+          toast({
+            title: 'Account created.',
+            description: "We've created your account for you.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
+            Navigate("/login");
+        
+        }).catch((err)=>{
+             setError(err.response.data)
+             toast({
+              title: "Email already exists",
+              description:"Please login" ,
+              status: 'error',
+              duration: 9000,
+              isClosable: true,
+            })
+        })
+    } catch (err) {
+      setError(err.response.data);
+      toast({
+        title: "Email already exists",
+        description: "Please login",
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      })
+    }
+
   }
 
   return (
@@ -88,7 +135,7 @@ export default function Register() {
                 <Input
                   type="text"
                   placeholder="Last Name"
-                   variant="filled"
+                  variant="filled"
                   onChange={(e) => {
                     setlname(e.target.value);
                   }}
@@ -176,6 +223,10 @@ export default function Register() {
               )}
             </div>
             <Button type="submit">Register</Button>
+
+            <h3  className="Register-Bottom" onClick={()=>{
+                 Navigate("/login")
+            }}>Already have an account?Login here</h3>
           </form>
         </div>
       </div>

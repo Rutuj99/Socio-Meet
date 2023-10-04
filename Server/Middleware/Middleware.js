@@ -11,6 +11,7 @@ export default function Middleware(req,res,next){
             try{
                 if(type=="Bearer" && token){
                     var data=Decode(token);
+                    delete data.password;
                     req.loggedInUser=data;
                     next();
                     return;

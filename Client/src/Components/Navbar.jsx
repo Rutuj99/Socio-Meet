@@ -11,9 +11,21 @@ import {
 } from "react-icons/fa";
 
 import "../Styles/styles.css"
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const { toggleColorMode, colorMode } = useColorMode();
+  const navigate = useNavigate();
+
+  let UserData=JSON.parse(localStorage.getItem("UserData"));
+
+
+  function logOutUser(){
+      localStorage.removeItem("token")
+      localStorage.removeItem("UserData")
+      navigate("/login");
+  }
+  
 
   return (
     <div className="Navbar-Main">
@@ -38,8 +50,8 @@ export default function Navbar() {
         <FaEnvelope size={40}   />
         <FaBell size={40}/>
         <FaQuestionCircle size={40}/>
-        <Select variant='filled' placeholder='Hi,Rutuj'>
-        <option><Button>Logout</Button></option>
+        <Select variant='filled' placeholder={`Hi, ${UserData.firstName}`} onChange={logOutUser}>
+        <option >Logout</option>
         </Select>
       </div>
     </div>

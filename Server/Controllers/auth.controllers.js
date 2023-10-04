@@ -10,8 +10,9 @@ export async function RegisterControll(data) {
   if (emailFind) {
     throw new Error("User with Email Address is alredy registered");
   }
-
-  bcrypt.hash(data.password, 5, async function (err, hash) {
+  
+  try{
+    bcrypt.hash(data.password, 5, async function (err, hash) {
     if (err) {
       throw new Error("Something went wrong please try again");
     }
@@ -23,26 +24,30 @@ export async function RegisterControll(data) {
       location: data.location,
       password: hash,
     });
-
-    return value;
   });
+  }catch(err){ 
+        throw new Error(err.message);
+  }
 
   return "Registration Successfull";
+
+  
 
 }
 
 
 export async function LoginControll(data) {
-    try {
+
       const value = await User.findOne({
         email: data.email,
       });
-  
+      
       if (!value) {
         throw new Error("Email not found.");
       }
   
       const result = await bcrypt.compare(data.password, value.password);
+
      
       if (result) {
         const token = Encode(JSON.stringify(value));
@@ -50,8 +55,5 @@ export async function LoginControll(data) {
       } else {
         throw new Error("Invalid password.");
       }
-    } catch (error) {
-      throw new Error("Invalid password.");
-    }
-
+   
   }
