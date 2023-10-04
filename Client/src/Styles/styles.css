@@ -101,7 +101,9 @@
       margin-bottom: 20px;
 }
 
-.spinner-one{
-    margin-left: 340px;
-}
+.spinner-one {
+     display: flex;
+     justify-content: space-around;
+     margin-bottom: 10px;
+  }
  

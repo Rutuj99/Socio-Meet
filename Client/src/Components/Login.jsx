@@ -150,9 +150,11 @@ export default function Login() {
               Dont't have an account?Sign Up here
             </h3>
           </form>
+
+          <div className="spinner-one">
           {
             spin && <Spinner
-            className="spinner-one"
+            
             thickness='4px'
             speed='0.65s'
             emptyColor='gray.200'
@@ -160,6 +162,7 @@ export default function Login() {
             size='xl'
           />
         }
+        </div>
         </div>
       </div>
     </div>

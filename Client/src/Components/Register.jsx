@@ -238,9 +238,10 @@ export default function Register() {
             }}>Already have an account?Login here</h3>
            
           </form>
+          <div className="spinner-one">
+           
           {
               spin && <Spinner
-              className="spinner-one"
               thickness='4px'
               speed='0.65s'
               emptyColor='gray.200'
@@ -248,6 +249,7 @@ export default function Register() {
               size='xl'
             />
           }
+          </div>
           
         </div>
        
