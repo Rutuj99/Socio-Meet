@@ -5,7 +5,7 @@ import {
   InputLeftElement,
   InputRightElement,
   Button,
-  Box,
+  Box,Spinner
 } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
@@ -25,6 +25,7 @@ export default function Login() {
 
   let [Eemail, EsetEmail] = useState(false);
   let [Epass, EsetPass] = useState(false);
+  let  [spin,setSpin]=useState(false);
 
   function handleRegister(e) {
     e.preventDefault();
@@ -58,9 +59,11 @@ export default function Login() {
             isClosable: true,
           })
 
-            window.location="/";
+              
+             setSpin(true);
+      
             setTimeout(()=>{
-              Navigate("/home")
+              window.location="/";
             },2000)
 
     
@@ -147,6 +150,16 @@ export default function Login() {
               Dont't have an account?Sign Up here
             </h3>
           </form>
+          {
+            spin && <Spinner
+            className="spinner-one"
+            thickness='4px'
+            speed='0.65s'
+            emptyColor='gray.200'
+            color='rgb(134, 216, 208)'
+            size='xl'
+          />
+        }
         </div>
       </div>
     </div>

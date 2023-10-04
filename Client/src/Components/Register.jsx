@@ -12,10 +12,12 @@ import {
 import { useToast } from '@chakra-ui/react'
 import { EmailIcon } from "@chakra-ui/icons";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Spinner } from '@chakra-ui/react'
 
 export default function Register() {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
+
   const toast = useToast();
   let Navigate=useNavigate();
 
@@ -31,6 +33,7 @@ export default function Register() {
   let [Elocation, EsetLocation] = useState(false);
   let [Epass, EsetPass] = useState(false);
   let [error, setError] = useState(false);
+  let [spin,setSpin]=useState(false);
 
   function handleRegister(e) {
     e.preventDefault();
@@ -82,10 +85,16 @@ export default function Register() {
             title: 'Account created.',
             description: "We've created your account for you.",
             status: 'success',
-            duration: 9000,
+            duration: 2000,
             isClosable: true,
-          })
-            Navigate("/login");
+          })  
+             
+             setSpin(true);
+         
+             setTimeout(() => {
+              Navigate("/login");
+             },2000);
+         
         
         }).catch((err)=>{
              setError(err.response.data)
@@ -93,7 +102,7 @@ export default function Register() {
               title: "Email already exists",
               description:"Please login" ,
               status: 'error',
-              duration: 9000,
+              duration: 2000,
               isClosable: true,
             })
         })
@@ -227,9 +236,23 @@ export default function Register() {
             <h3  className="Register-Bottom" onClick={()=>{
                  Navigate("/login")
             }}>Already have an account?Login here</h3>
+           
           </form>
+          {
+              spin && <Spinner
+              className="spinner-one"
+              thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='rgb(134, 216, 208)'
+              size='xl'
+            />
+          }
+          
         </div>
+       
       </div>
+     
     </div>
   );
 }
