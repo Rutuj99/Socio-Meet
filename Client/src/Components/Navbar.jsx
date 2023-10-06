@@ -8,6 +8,7 @@ import {
   FaBell,
   FaEnvelope,
   FaQuestionCircle,
+  FaUserAlt
 } from "react-icons/fa";
 
 import "../Styles/styles.css"

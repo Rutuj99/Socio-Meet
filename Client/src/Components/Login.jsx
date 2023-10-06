@@ -61,6 +61,7 @@ export default function Login() {
 
               
              setSpin(true);
+              // window.location.reload();
       
             setTimeout(()=>{
               window.location="/";

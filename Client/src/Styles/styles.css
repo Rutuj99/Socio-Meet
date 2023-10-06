@@ -1,109 +1,286 @@
-*{
-    font-family:  Bahnschrift;
+* {
+  font-family: Bahnschrift;
 }
 /* -----------------------------NAVBAR---------------------------------- */
-.Navbar-Main{
-     display: flex;
-     height: 70px;
-   background-color: rgb(134, 216, 208);
-   justify-content: space-between;
-   padding-left: 20px;
-   padding-right: 50px;
-   align-items: center;
+.Navbar-Main {
+  display: flex;
+  height: 70px;
+  background-color: rgb(134, 216, 208);
+  /* background-color: rgb(255, 0, 0); */
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 50px;
+  align-items: center;
 }
 
-.Navbar-Main h1{
-    font-size: 30px;
-    font-weight: bolder;
+.Navbar-Main h1 {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 30px;
 }
 
-.Navbar-One{
-    display: flex;
-    gap:50px;
+.Navbar-One {
+  display: flex;
+  gap: 50px;
 }
 
-.Navbar-Two{
-    display: flex;
-   gap:50px;
+.Navbar-Two {
+  display: flex;
+  gap: 50px;
 }
 
 /* -------------------------------REGISTER------------------------------------- */
 
-
-.Register-One{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 70px;
-    background-color: rgb(134, 216, 208);
-    margin-bottom: 4%;
+.Register-One {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  background-color: rgb(134, 216, 208);
+  margin-bottom: 4%;
 }
 
-
-.Register-One h1{
-    font-size: 30px;
-    font-weight: bolder;
+.Register-One h1 {
+  font-size: 30px;
+  font-weight: bolder;
 }
 
-.Register-Two{
-   padding-left: 20px;
-   padding-right: 20px;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    width: 50%;
-    
+.Register-Two {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  width: 50%;
 }
 
-.Register-Box{
-     display: flex;
-     justify-content: space-around;
+.Register-Box {
+  display: flex;
+  justify-content: space-around;
 }
 
-.Register-Name{
-     display: flex;
-     gap:10px
+.Register-Name {
+  display: flex;
+  gap: 10px;
 }
 
-.Register-Two h1{
-      margin-top: 10px;
-      margin-bottom: 10px;
-      font-size: 20px;
-      font-weight: bold;
+.Register-Two h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
-
 
 /* .Register-Two InputGroup{
      margin-bottom: 20px;
 } */
 
-.Error-Name{
-    display: flex;
+.Error-Name {
+  display: flex;
 }
 
-.Error-Name div:nth-child(2){
-    position: absolute;
-    left: 775px;
+.Error-Name div:nth-child(2) {
+  position: absolute;
+  left: 775px;
 }
 
-.Register-Input1{
-   height: 60px;
+.Register-Input1 {
+  height: 60px;
 }
 
-.Register-Input1 + Button{
-    background-color: rgb(134, 216, 208);
-    width: 100%;
-    margin-bottom: 20px;
+.Register-Input1 + Button {
+  background-color: rgb(134, 216, 208);
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.Register-Bottom{
-      color:rgb(134, 216, 208);
-      cursor: pointer;
-      text-decoration: underline;
-      margin-bottom: 20px;
+.Register-Bottom {
+  color: rgb(134, 216, 208);
+  cursor: pointer;
+  text-decoration: underline;
+  margin-bottom: 20px;
 }
 
 .spinner-one {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+/* --------------------------------HOME PAGE-------------------------------- */
+
+.Home-Main1 {
+  height: 100%;
+  background-color: rgb(246, 247, 248);
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.Home-Main2 {
+  display: grid;
+  grid-template-columns: 24% 46% 24%;
+  gap: 3%;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+
+.Home-Profile {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+   padding-left: 30px;
+   padding-right: 30px;
+   background-color: white;
+   height: 370px;
+}
+
+.line{
+    border: 0.2px solid rgb(210, 210, 210);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Profile-one{
      display: flex;
-     justify-content: space-around;
-     margin-bottom: 10px;
+     align-items: center;
+    justify-content: space-between;
+     margin-top: 20px;
+}
+
+
+.Profile-two{
+    display: flex;
+    align-items: center;
+    gap:10px;
+   justify-content: space-between;
+}
+
+.Profile-two h1{
+
+    font-size: 20px;
+}
+
+.Profile-four{
+     display: flex;
+     gap:20px;
+       color: rgb(100, 100, 100);
+}
+.Profile-five{
+    display: flex;
+    gap:20px;
+    color: rgb(100, 100, 100);
+}
+
+
+
+.Profile-seven{
+     display: flex;
+     justify-content: space-between;
+}
+.Profile-seven h1:first-child {
+    color: rgb(100, 100, 100);
+}
+
+.Profile-eight h1:first-child {
+    color: rgb(100, 100, 100);
+}
+
+.Profile-eight{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Profile-ten{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.Profile-nine{
+    padding-bottom: 30px;
+}
+
+.twitter{
+    margin-top: 7px;
+     width: 20px;
+     height: 20px;
+}
+
+.Profile-eleven h1:nth-child(2) {
+    color: rgb(100, 100, 100);
+    font-size: smaller;
+}
+
+.Profile-eleven{
+     display: flex;
+     gap:10px;
+}
+
+.name-social{
+    font-size: larger;
+}
+
+.Home-Content {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  background-color: rgb(153, 195, 57);
+  height: 800px;
+}
+
+
+.Home-Ad {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 560px;
   }
- 
+
+.Ad-one{
+     display: flex;
+     justify-content: space-between;
+     margin-top: 10px;
+}
+
+.Ad-two{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+
+.Ad-two h1:nth-child(2) {
+    color: rgb(112, 111, 111);
+   font-family:cursive;
+    text-decoration: underline;
+}
+
+.autoplay-slider img{
+     margin-top: 10px;
+     border-radius: 10px;
+}
+
+.Ad-one h1:nth-child(2) {
+    color: rgb(205, 205, 205);
+}
+
+.Home-Ad h6{
+    margin-top: 3px;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight:lighter;
+  color: rgb(123, 121, 121);
+
+}
+
+.img-one{
+    margin-top: 10px;
+     height: 200px;
+     border-radius: 10px;
+}
+
+
