@@ -23,6 +23,8 @@ let UserSchema=new mongoose.Schema({
          required:true,
          min:8
        }
+}, {
+  timestamps: true 
 })
 
 let User=mongoose.model("user",UserSchema);

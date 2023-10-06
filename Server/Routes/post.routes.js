@@ -6,7 +6,7 @@ import { userPost } from "../Controllers/post.controllers.js";
 import { allPost } from "../Controllers/post.controllers.js";
 
 // posting 
-postRoutes.post("/",Middleware,async (req,res)=>{
+postRoutes.post("/",async (req,res)=>{
 
     try{
         let data=req.body;
@@ -20,7 +20,7 @@ postRoutes.post("/",Middleware,async (req,res)=>{
 });
 
 //reading self post on the basis of user ID
-postRoutes.get("/getUserPosts",Middleware,async(req,res)=>{
+postRoutes.get("/getUserPosts",async(req,res)=>{
     try{
         let data=req.body;
         let value=await  userPost(data);
@@ -33,7 +33,7 @@ postRoutes.get("/getUserPosts",Middleware,async(req,res)=>{
 
 
 //getting all posts of all users
-postRoutes.get("/getAllPosts",Middleware,async(req,res)=>{
+postRoutes.get("/getAllPosts",async(req,res)=>{
     try{
         let value=await allPost();
         res.status(200).send(value);

@@ -11,6 +11,7 @@
   padding-left: 20px;
   padding-right: 50px;
   align-items: center;
+
 }
 
 .Navbar-Main h1 {
@@ -126,6 +127,7 @@
   margin-left: 50px;
   margin-right: 50px;
   margin-top: 20px;
+  position: relative;
 }
 
 .Home-Profile {
@@ -135,6 +137,8 @@
    padding-right: 30px;
    background-color: white;
    height: 370px;
+   position: sticky; 
+   top: 10px;
 }
 
 .line{
@@ -223,12 +227,7 @@
     font-size: larger;
 }
 
-.Home-Content {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 10px;
-  background-color: rgb(153, 195, 57);
-  height: 800px;
-}
+
 
 
 .Home-Ad {
@@ -238,6 +237,8 @@
     padding-left: 30px;
     padding-right: 30px;
     height: 560px;
+    position: sticky; 
+    top: 10px;
   }
 
 .Ad-one{
@@ -284,3 +285,78 @@
 }
 
 
+
+/* .Home-Content {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+  } */
+
+
+
+  /* --------------------------POST--------------------------- */
+
+  .Post-Main{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    height: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+  }
+
+
+  .Post-one{
+      display: flex;
+      align-items: center;
+      gap:20px;
+      padding-top: 20px;
+     
+  }
+
+  .Post-one h1{
+      background-color: rgb(134, 216, 208);
+      height: 43px;
+      width: 100%;
+      border-radius: 20px;
+      padding-left: 20px;
+      padding-top: 10px;
+
+
+  }
+
+
+  .Post-two{
+        border: 1px solid rgb(190, 190, 190);
+        background-color:  rgb(243, 243, 243);;
+        margin-top: 8px;
+        height: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 10px;
+
+  }
+
+  .Post-two h1{
+     
+    padding-top: 10px;
+    padding-bottom: 4px;
+    font-size: smaller;
+    margin-left: 3px;
+  }
+
+
+  .Post-two Button{
+     border: 2px dotted  rgb(61, 143, 244);
+     border-radius: 10px;
+     height: 50px;
+     width: 100%;
+    
+  }
+
+  .Post-two Button:hover{
+   
+      background-color:  rgb(134, 216, 208);
+
+  }
+
+ 

@@ -4,6 +4,7 @@ import { Avatar,Divider } from '@chakra-ui/react'
 import { FaUserAlt} from "react-icons/fa";
 import { FaMapMarkerAlt,FaBriefcase,FaTwitter,FaEdit,FaLinkedin } from "react-icons/fa";
 import AutoplaySlider from './Advert';
+import CreateP from './CreateP';
 
 export default function Home() {
                 
@@ -114,6 +115,7 @@ export default function Home() {
 
 
            <div className='Home-Content'>
+           <CreateP/>
            
            </div>
 
