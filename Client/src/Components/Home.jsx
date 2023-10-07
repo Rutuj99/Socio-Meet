@@ -5,6 +5,10 @@ import { FaUserAlt} from "react-icons/fa";
 import { FaMapMarkerAlt,FaBriefcase,FaTwitter,FaEdit,FaLinkedin } from "react-icons/fa";
 import AutoplaySlider from './Advert';
 import CreateP from './CreateP';
+import AllPost from './AllPost';
+import NotLogin from './NotLogin';
+
+
 
 export default function Home() {
                 
@@ -13,11 +17,19 @@ export default function Home() {
 
            let data=JSON.parse(localStorage.getItem("UserData"));
 
+          
+
            useEffect(()=>{
                   setV( Math.floor(Math.random()*10000))   
                   setV2( Math.floor(Math.random()*1000))  
 
            },[])
+
+
+           if(!data){    
+           
+            return(<NotLogin/>)
+    }
 
   return (
     <div className='Home-Main1'>
@@ -116,6 +128,8 @@ export default function Home() {
 
            <div className='Home-Content'>
            <CreateP/>
+           <AllPost/>
+            
            
            </div>
 

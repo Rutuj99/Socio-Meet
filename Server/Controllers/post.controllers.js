@@ -24,7 +24,7 @@ export async function userPost(data) {
 
 export async function allPost() {
   try {
-    let value = await Post.find();
+    const value = await Post.find().sort({ createdAt: -1 });
     return value;
   } catch (err) {
     throw new Error("Something went wrong");

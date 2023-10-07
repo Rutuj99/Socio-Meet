@@ -21,6 +21,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
+import { BsWindowSidebar } from "react-icons/bs";
 
 export default function CreateP() {
   const {
@@ -96,7 +97,9 @@ export default function CreateP() {
             isClosable: true,
             mt:"20px"
           });
+          window.location="/";
         }, 2000);
+       
       })
       .catch((err) => {
         console.log(err);
