@@ -97,8 +97,12 @@ export default function CreateP() {
             isClosable: true,
             mt:"20px"
           });
-          window.location="/";
+          
         }, 2000);
+
+        setTimeout(()=>{
+          window.location="/";
+        },3000)
        
       })
       .catch((err) => {

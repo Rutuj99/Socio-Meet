@@ -13,8 +13,22 @@ export async function addPost(data) {
 export async function userPost(data) {
   try {
     let value = await Post.find({
-      userId: data.ID,
-    });
+      userId: data,
+    }).sort({ createdAt: -1 });;
+
+    return value;
+  } catch (err) {
+    throw new Error("Something went wrong");
+  }
+}
+
+
+export async function deletePost(data){
+  console.log("delete",data)
+  try {
+    let value = await Post.deleteOne({
+       _id : data,
+    })
 
     return value;
   } catch (err) {

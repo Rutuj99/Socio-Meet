@@ -389,8 +389,89 @@
 
   }
 
-  .Main-Card Button{
-    cursor: not-allowed;
+ 
+
+  /* ------------------------PROFILE-------------------------------- */
+
+  .Home-Profile1 {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   border-radius: 10px;
+     padding-left: 30px;
+     padding-right: 30px;
+     background-color: white;
+     height: 370px;
+     top: 10px;
+     margin-left: 50px;
+     margin-right: 50px;
+     margin-bottom: 10px;
+     padding-top: 2px;
+     margin-top: 20px;
+    
   }
+
+  .Profile-Two{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .Profile-Three{
+    margin-left: 50px;
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 20px;
+  }
+
+  .Buttons-UserPosts{
+      display: flex;
+      justify-content: space-evenly;
+      margin-left: 10px;
+    margin-right: 10px;
+    gap:5px;
+    
+  }
+
+  .Buttons-UserPosts Button{
+      background-color: rgb(246, 247, 248);
+  }
+
+  .Buttons-UserPosts Button:first-child:hover{
+    background-color:  rgb(134, 216, 208);
+    
+  }
+
+  .Buttons-UserPosts Button:nth-child(2):hover{
+    background-color:  rgb(248, 68, 68);
+  }
+  
+
+  .Buttons-UserPosts Button:nth-child(3):hover{
+    background-color:  rgb(134, 216, 208);
+ }
+
+  .Buttons-UserPosts Button:nth-child(4):hover{
+     cursor: not-allowed;
+  }
+
+  .No-Post{
+     margin-bottom: 40px;
+     font-size: 30px;
+  }
+
+  .Post-Name{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 40px;
+     background-color:  rgb(134, 216, 208);
+     margin-left: 50px;
+     margin-right: 50px;
+     margin-bottom: 20px;
+     font-size: larger;
+     border-radius: 10px;
+  }
+
+
+
  
  

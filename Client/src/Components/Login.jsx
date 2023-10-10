@@ -61,13 +61,11 @@ export default function Login() {
 
               
              setSpin(true);
-              // window.location.reload();
       
             setTimeout(()=>{
-              window.location="/";
+              Navigate("/home")
             },2000)
 
-    
         })
         .catch((err) => {
          

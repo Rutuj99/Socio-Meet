@@ -4,6 +4,7 @@ import Middleware from "../Middleware/Middleware.js";
 import { addPost } from "../Controllers/post.controllers.js";
 import { userPost } from "../Controllers/post.controllers.js";
 import { allPost } from "../Controllers/post.controllers.js";
+import { deletePost } from "../Controllers/post.controllers.js";
 
 // posting 
 postRoutes.post("/",async (req,res)=>{
@@ -19,11 +20,26 @@ postRoutes.post("/",async (req,res)=>{
           
 });
 
+
 //reading self post on the basis of user ID
-postRoutes.get("/getUserPosts",async(req,res)=>{
+postRoutes.get("/getUserPosts/:ID",async(req,res)=>{
     try{
-        let data=req.body;
+        let data=req.params.ID
         let value=await  userPost(data);
+        res.status(200).send(value);
+    }catch(err){
+          res.status(500).send(err.message);
+    }
+       
+})
+
+
+
+//reading self post on the basis of user ID
+postRoutes.get("/deletePost/:ID",async(req,res)=>{
+    try{
+        let data=req.params.ID
+        let value=await deletePost(data);
         res.status(200).send(value);
     }catch(err){
           res.status(500).send(err.message);

@@ -7,7 +7,7 @@ import AutoplaySlider from './Advert';
 import CreateP from './CreateP';
 import AllPost from './AllPost';
 import NotLogin from './NotLogin';
-
+import { Link } from 'react-router-dom';
 
 
 export default function Home() {
@@ -36,20 +36,21 @@ export default function Home() {
     <Navbar/>
     <div className='Home-Main2'>
           
-           <div className='Home-Profile'>
+                      <div className='Home-Profile'>
                     
-                        <div className='Profile-one'>
+                      <Link to="/profile"> <div className='Profile-one'>
 
                         <div className='Profile-two'>
                         <Avatar  name={`${data.firstName} ${data.lastName}` }  />
                         <h1>{`${data.firstName} ${data.lastName}` }</h1>
                         </div>
                          <div>
-                            <FaUserAlt/>
+                           <Link to="/profile"><FaUserAlt/></Link> 
                          </div>
                            
                         
-                        </div>
+                        </div></Link> 
+                        
 
                          <hr className='line'/>
 
