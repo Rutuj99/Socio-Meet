@@ -41,10 +41,12 @@ import NotLogin from "./NotLogin";
 import { useDisclosure } from "@chakra-ui/react";
 import { Skeleton, Stack } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 export default function UserPosts() {
   let [data, setData] = useState([]);
   let data1 = JSON.parse(localStorage.getItem("UserData"));
+  let Navigate=useNavigate();
 
   const {
     isOpen: isOpen1,
@@ -59,6 +61,21 @@ export default function UserPosts() {
   const [input2, setInput2] = useState("");
   const [isError2, setError2] = useState(false);
   const [prog, setProg] = useState(false);
+  const [idmain,setId]=useState();
+
+
+
+  let UserData = JSON.parse(localStorage.getItem("UserData"));
+     
+
+
+  function UpdateData(id,caption,post){
+          setInput1(caption);
+          setInput2(post);
+          setId(id);
+          onOpen1();
+
+  }
 
   function handleInputChange1(e) {
     setError(false);
@@ -78,9 +95,8 @@ export default function UserPosts() {
     setProg(false);
   }
 
-  let UserData = JSON.parse(localStorage.getItem("UserData"));
 
-  function handleClick() {
+  function handleClickUpdate() {
     if (input1.length < 5) {
       setError(true);
     }
@@ -90,17 +106,19 @@ export default function UserPosts() {
       return;
     }
 
+
+
+
     axios
-      .post("http://localhost:3002/post", {
-        userId: UserData._id,
-        firstName: UserData.firstName,
-        lastName: UserData.lastName,
+      .patch("http://localhost:3002/post/patch", {
+        id:idmain,
+        userId:UserData._id,
         caption: input1,
         post: input2,
       })
       .then((res) => {
-        setProg(true);
 
+        setProg(true);
         setTimeout(() => {
           onClose1();
           setProg(false);
@@ -118,6 +136,9 @@ export default function UserPosts() {
             mt: "20px",
           });
         }, 2000);
+
+          setData(res.data);
+     
       })
       .catch((err) => {
         console.log(err);
@@ -168,6 +189,8 @@ export default function UserPosts() {
     );
   }
 
+
+
   return data.map((elem) => {
     const updatedAt = elem.updatedAt ? new Date(elem.updatedAt) : null;
 
@@ -212,7 +235,10 @@ export default function UserPosts() {
         </CardBody>
 
         <CardFooter className="Buttons-UserPosts">
-          <Button variant="ghost" leftIcon={<BiEdit />} onClick={onOpen1}>
+          <Button variant="ghost" leftIcon={<BiEdit />} onClick={()=>{
+                
+                 UpdateData(elem._id,elem.caption,elem.post)
+          }}>
             Edit
           </Button>
 
@@ -257,8 +283,8 @@ export default function UserPosts() {
               </ModalBody>
 
               <ModalFooter>
-                <Button colorScheme="teal" mr={3} onClick={handleClick}>
-                  Post
+                <Button colorScheme="teal" mr={3} onClick={handleClickUpdate}>
+                  Update
                 </Button>
                 <Button onClick={onClose1}>Cancel</Button>
               </ModalFooter>
@@ -267,6 +293,11 @@ export default function UserPosts() {
               <Button onClick={handleClear}>Clear Input Data</Button>
             </ModalContent>
           </Modal>
+
+
+
+
+
 
           <Button
             variant="ghost"

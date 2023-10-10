@@ -5,6 +5,9 @@ import { addPost } from "../Controllers/post.controllers.js";
 import { userPost } from "../Controllers/post.controllers.js";
 import { allPost } from "../Controllers/post.controllers.js";
 import { deletePost } from "../Controllers/post.controllers.js";
+import { updatePost } from "../Controllers/post.controllers.js";
+
+
 
 // posting 
 postRoutes.post("/",async (req,res)=>{
@@ -19,6 +22,20 @@ postRoutes.post("/",async (req,res)=>{
           
           
 });
+
+
+//updating post 
+postRoutes.patch("/patch",async (req,res)=>{
+       
+    try{
+        let data=req.body;
+        let value=await updatePost(data);
+        res.status(200).send(value);
+    }catch(err){
+          res.status(500).send(err.message);
+    }
+
+})
 
 
 //reading self post on the basis of user ID

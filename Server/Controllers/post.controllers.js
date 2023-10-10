@@ -14,7 +14,7 @@ export async function userPost(data) {
   try {
     let value = await Post.find({
       userId: data,
-    }).sort({ createdAt: -1 });;
+    }).sort({ createdAt: -1 });
 
     return value;
   } catch (err) {
@@ -22,19 +22,32 @@ export async function userPost(data) {
   }
 }
 
-
-export async function deletePost(data){
-  console.log("delete",data)
+export async function deletePost(data) {
   try {
     let value = await Post.deleteOne({
-       _id : data,
-    })
+      _id: data,
+    });
 
     return value;
   } catch (err) {
     throw new Error("Something went wrong");
   }
 }
+
+
+export async function updatePost(data) {
+  try {
+     await Post.updateOne(
+      { _id: data.id },
+      { caption: data.caption, post: data.post }
+    );
+     let value=await Post.find({ userId:data.userId}).sort({ createdAt: -1 });
+    return value;
+  } catch (err) {
+    throw new Error("Something went wrong");
+  }
+}
+
 
 export async function allPost() {
   try {
