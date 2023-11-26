@@ -1,6 +1,6 @@
 
 # Sociomeet
-Sociomeet is a full-stack blog application with various features allowing users to create, edit, and view blog posts. It provides functionalities like user authentication, post creation, commenting, profile viewing, and more.
+Sociomeet is a full-stack blog application with various features allowing users to create, edit, delete and view blog posts. It provides functionalities like user authentication, post creation, commenting, profile viewing, and more.
 
 
 ## Features
@@ -36,7 +36,7 @@ Sociomeet is a full-stack blog application with various features allowing users 
 
 
 ## Future Scope
-Our aspirations for Sociomeet include a roadmap for future enhancements and additions:
+Aspirations for Sociomeet include a roadmap for future enhancements and additions:
 
 - Enhanced Features: Incorporating a robust product recommendation system and enabling customer reviews to foster user engagement and trust.
 - Expanded Product Line: Continuously adding more products to the platform to offer a wider range of choices to our users.
