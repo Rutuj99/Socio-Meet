@@ -169,7 +169,7 @@ export default function Error404() {
 
       <div id="navigation">
       <a href="https://github.com/Rutuj99/Blog">
-  <Button w="100px">Click</Button>
+  <Button w="101px">Click</Button>
 </a>
       </div>
     </div>
