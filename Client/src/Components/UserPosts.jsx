@@ -110,7 +110,7 @@ export default function UserPosts() {
 
 
     axios
-      .patch("http://localhost:3002/post/patch", {
+      .patch(`${process.env.REACT_APP_EXPRESS}/post/patch`, {
         id:idmain,
         userId:UserData._id,
         caption: input1,
@@ -147,7 +147,7 @@ export default function UserPosts() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3002/post/getUserPosts/${data1._id}`)
+      .get(`${process.env.REACT_APP_EXPRESS}/post/getUserPosts/${data1._id}`)
       .then((res) => {
         setData(res.data);
       })
@@ -169,7 +169,7 @@ export default function UserPosts() {
     });
 
     axios
-      .get(`http://localhost:3002/post/deletePost/${postId}`)
+      .get(`${process.env.REACT_APP_EXPRESS}/post/deletePost/${postId}`)
       .then(() => {
         setData((prevData) => prevData.filter((elem) => elem._id !== postId));
       })

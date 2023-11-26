@@ -18,7 +18,7 @@ function App() {
       if (token) {
         try {
           await axios
-            .get("http://localhost:3002/auth/allreadyLogin", {
+            .get(`${process.env.REACT_APP_EXPRESS}/auth/allreadyLogin`, {
               headers: {
                 authorization: `Bearer ${token}`,
               },

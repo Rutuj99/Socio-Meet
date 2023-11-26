@@ -45,7 +45,7 @@ export default function Login() {
 
     try {
       axios
-        .post("http://localhost:3002/auth/login", {
+        .post(`${process.env.REACT_APP_EXPRESS}/auth/login`, {
           email: email,
           password: pass,
         })

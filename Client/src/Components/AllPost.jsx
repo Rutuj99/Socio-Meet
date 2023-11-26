@@ -31,7 +31,7 @@ export default function AllPost() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/post/getAllPosts")
+      .get(`${process.env.REACT_APP_EXPRESS}/post/getAllPosts`)
       .then((res) => {
         setData(res.data);
       })
@@ -54,7 +54,7 @@ export default function AllPost() {
     setComErr(false);
 
     axios
-      .patch("http://localhost:3002/post/comment", {
+      .patch(`${process.env.REACT_APP_EXPRESS}/post/comment`, {
         PostId: Id,
         fName: UserData.firstName,
         lName: UserData.lastName,

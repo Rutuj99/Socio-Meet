@@ -21,11 +21,14 @@ export default function Error404() {
       }, 500 * (index + 1));
     });
   }, []);
+  useEffect(() => {
+    document.body.style.backgroundColor = 'lightgrey';
+  }, []);
 
-  
+
 
   return (
-    <div >
+  
     <div id="wrap" >
     <div id="wordsearch">
       <ul>
@@ -168,12 +171,12 @@ export default function Error404() {
           
 
       <div id="navigation">
-      <a href="https://github.com/Rutuj99/Blog">
+      <a href="https://github.com/Rutuj99/Socio-Meet">
   <Button w="101px">Click</Button>
 </a>
       </div>
     </div>
   </div>
-    </div>
+   
   )
 }

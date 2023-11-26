@@ -73,7 +73,7 @@ export default function CreateP() {
     }
 
     axios
-      .post("http://localhost:3002/post", {
+      .post(`${process.env.REACT_APP_EXPRESS}/post`, {
         userId: UserData._id,
         firstName: UserData.firstName,
         lastName: UserData.lastName,

@@ -72,7 +72,7 @@ export default function Register() {
 
     try {
       axios
-        .post("http://localhost:3002/auth/register", {
+        .post(`${process.env.REACT_APP_EXPRESS}/auth/register`, {
           firstName: fname,
           lastName: lname,
           email: email,
