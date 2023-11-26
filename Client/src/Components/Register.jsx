@@ -14,6 +14,7 @@ import { EmailIcon } from "@chakra-ui/icons";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Spinner } from '@chakra-ui/react'
 
+
 export default function Register() {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);

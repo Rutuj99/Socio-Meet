@@ -87,6 +87,7 @@ export default function Login() {
   }
 
   return (
+    
     <div className="Register-Main">
       <div className="Register-One">
         <h1>SocioMeet</h1>

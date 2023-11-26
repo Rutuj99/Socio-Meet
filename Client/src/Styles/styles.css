@@ -52,11 +52,13 @@
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   width: 50%;
+  
 }
 
 .Register-Box {
   display: flex;
   justify-content: space-around;
+  
 }
 
 .Register-Name {
@@ -105,6 +107,17 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
+}
+
+/* Media-Register */
+
+@media (max-width: 480px) {
+
+  .Register-Two {
+    margin-top: 20px;
+    width: 80%;
+  }
+
 }
 
 /* --------------------------------HOME PAGE-------------------------------- */
@@ -290,6 +303,27 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
   } */
+
+
+  /* Media-Home  */
+
+
+  @media (max-width: 480px) {
+
+    .Home-Main2 {
+      display: flex;
+      flex-direction: column;
+      /* grid-template-columns: 24% 46% 24%; */
+      gap: 3%;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-top: 20px;
+      position: relative;
+      /* background-color: blue; */
+    }
+  
+  }
+  
 
 
 
@@ -486,6 +520,20 @@
    
     
   }
+
+  /* media - Profile */
+  @media (max-width: 480px) {
+
+    .Profile-Three{
+      /* margin-left: 50px; */
+      /* margin-right: 50px; */
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      column-gap: 20px;
+    }
+  
+  }
+  
 
 
   /* --------------------------Comment ------------------------------- */

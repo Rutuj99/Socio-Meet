@@ -33,10 +33,10 @@ export default function Home() {
 
   return (
     <div className='Home-Main1'>
-    <Navbar/>
+     <Navbar/>
     <div className='Home-Main2'>
           
-                      <div className='Home-Profile'>
+                      <div className='Home-Profile'  title="Click to visit Profile Page">
                     
                       <Link to="/profile"> <div className='Profile-one'>
 
@@ -49,7 +49,7 @@ export default function Home() {
                          </div>
                            
                         
-                        </div></Link> 
+                        </div>
                         
 
                          <hr className='line'/>
@@ -122,7 +122,7 @@ export default function Home() {
                   </div>
 
 
-
+        </Link>
                              
            </div>
 
