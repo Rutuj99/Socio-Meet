@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import {redirect, useNavigate} from "react-router-dom";
 import {
   Input,
   InputGroup,
@@ -13,7 +13,6 @@ import { useToast } from '@chakra-ui/react'
 import { EmailIcon } from "@chakra-ui/icons";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Spinner } from '@chakra-ui/react'
-
 
 export default function Register() {
   const [show, setShow] = React.useState(false);
@@ -98,7 +97,12 @@ export default function Register() {
          
         
         }).catch((err)=>{
-             setError(err.response.data)
+
+          
+          if (err && err.response && err.response.status === 500) {
+    // Server error (HTTP status 500)
+    // alert("Something went wrong on the server 500");
+      setError(err.response.data)
              toast({
               title: "Email already exists",
               description:"Please login" ,
@@ -106,6 +110,14 @@ export default function Register() {
               duration: 2000,
               isClosable: true,
             })
+  }else {
+    // Network error or other cases
+    // alert("Network error or other issue");
+    Navigate("/404")
+  }
+
+          
+           
         })
     } catch (err) {
       setError(err.response.data);
