@@ -250,7 +250,7 @@ export default function UserPosts() {
           >
             <ModalOverlay />
             <ModalContent>
-              <ModalHeader>Create your Post</ModalHeader>
+              <ModalHeader>Edit your Post</ModalHeader>
               <ModalCloseButton />
               <ModalBody pb={6}>
                 <FormControl isInvalid={isError} mb="20px">
@@ -309,9 +309,7 @@ export default function UserPosts() {
             Delete
           </Button>
 
-          <Button variant="ghost" leftIcon={<BiChat />}>
-            Comment
-          </Button>
+          
           <Button variant="ghost" leftIcon={<BiShare />}>
             Share
           </Button>

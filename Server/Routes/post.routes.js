@@ -5,7 +5,7 @@ import { addPost } from "../Controllers/post.controllers.js";
 import { userPost } from "../Controllers/post.controllers.js";
 import { allPost } from "../Controllers/post.controllers.js";
 import { deletePost } from "../Controllers/post.controllers.js";
-import { updatePost } from "../Controllers/post.controllers.js";
+import { updatePost,AddComment } from "../Controllers/post.controllers.js";
 
 
 
@@ -74,6 +74,22 @@ postRoutes.get("/getAllPosts",async(req,res)=>{
           res.status(500).send(err.message);
     }
            
+})
+
+
+// insert comment by updating/patch 
+
+postRoutes.patch("/comment",async(req,res)=>{
+         try{
+            let data=req.body;
+            // console.log(data,"data");
+            let value=await AddComment(data);
+            // console.log(value);
+            res.status(200).send(value);
+             
+         }catch(err){
+              res.status(500).send(err.message);
+         }
 })
 
 

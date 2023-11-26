@@ -61,8 +61,10 @@ export default function CreateP() {
   let UserData = JSON.parse(localStorage.getItem("UserData"));
 
   function handleClick() {
+
     if (input1.length < 5) {
       setError(true);
+      return;
     }
 
     if (input2.length < 10) {

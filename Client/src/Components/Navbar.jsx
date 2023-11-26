@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const { toggleColorMode, colorMode } = useColorMode();
+ 
   const navigate = useNavigate();
 
   let UserData=JSON.parse(localStorage.getItem("UserData"));
@@ -31,7 +32,7 @@ export default function Navbar() {
     <div className="Navbar-Main">
       <div className="Navbar-One">
         <h1>SocioMeet</h1>
-        <InputGroup>
+        <InputGroup  cursor="no-drop">
           <Input placeholder="Search..." />
           <InputRightElement>
             <Search2Icon />
@@ -44,12 +45,14 @@ export default function Navbar() {
           aria-label="toggle theme"
           rounded="full"
           h="10"
+          cursor="no-drop" // Change cursor style to 'not-allowed' for a disabled look
+          pointerEvents="none"
           onClick={toggleColorMode}
-          icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+          icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
         />
-        <FaEnvelope size={40}   />
-        <FaBell size={40}/>
-        <FaQuestionCircle size={40}/>
+        <FaEnvelope size={40}   cursor="no-drop" />
+        <FaBell size={40}  cursor="no-drop"/>
+        <FaQuestionCircle size={40}  cursor="no-drop"/>
         <Select variant='filled' placeholder={`Hi, ${UserData.firstName}`} onChange={logOutUser}>
         <option >Logout</option>
         </Select>

@@ -1,3 +1,4 @@
+import { Error } from "mongoose";
 import Post from "../Modules/Post.Module.js";
 
 export async function addPost(data) {
@@ -56,4 +57,29 @@ export async function allPost() {
   } catch (err) {
     throw new Error("Something went wrong");
   }
+}
+
+
+export async function AddComment(data){
+       try{
+          
+          const value=await Post.updateOne(
+            {_id:data.PostId},
+            {
+        $push: {
+          comment: {
+            fName: data.fName,
+            lName:data.lName,
+            comment: data.comment,
+          },
+        },
+      },
+          )
+    
+
+          return value;
+         
+       }catch(err){
+          throw new Error("Something went wrong");
+       }
 }

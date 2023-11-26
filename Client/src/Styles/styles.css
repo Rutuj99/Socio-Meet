@@ -432,6 +432,10 @@
   }
 
   .Buttons-UserPosts Button{
+   width: 100%;
+}
+
+  .Buttons-UserPosts Button{
       background-color: rgb(246, 247, 248);
   }
 
@@ -441,7 +445,7 @@
   }
 
   .Buttons-UserPosts Button:nth-child(2):hover{
-    background-color:  rgb(248, 68, 68);
+    background-color:  rgb(155, 155, 155);
   }
   
 
@@ -470,6 +474,55 @@
      font-size: larger;
      border-radius: 10px;
   }
+
+
+  .Collapse-Comment{
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color:  rgb(134, 216, 208);
+    margin-bottom: 10px;
+    font-size: 13px;
+    border-radius: 10px;
+   
+    
+  }
+
+
+  /* --------------------------Comment ------------------------------- */
+
+  .comment-one{
+     display: flex;
+     gap:5px;
+  }
+
+  .comment-one Button{
+    background-color:  rgb(134, 216, 208);
+    border: 1px solid rgb(246, 247, 248);
+    color: azure;
+}
+
+
+  .comment-one Button:hover{
+      color: black;
+  }
+
+  .comment-two{
+    margin-top: 10px;
+     display: flex;
+     align-items: center;
+     gap:10px;
+  }
+
+
+
+ .comment-button:hover{
+   color:  rgb(11, 127, 108);
+
+  
+}
+
+
+  
 
 
 

@@ -20,7 +20,8 @@ let PostSchema=new mongoose.Schema({
       post:{
          type:String,
          required:true
-      }
+      },
+      comment:[]
 },{
   timestamps: true 
 });
