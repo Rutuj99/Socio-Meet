@@ -46,7 +46,7 @@ import { useNavigate } from "react-router-dom";
 export default function UserPosts() {
   let [data, setData] = useState([]);
   let data1 = JSON.parse(localStorage.getItem("UserData"));
-  let Navigate=useNavigate();
+  let Navigate = useNavigate();
 
   const {
     isOpen: isOpen1,
@@ -61,20 +61,15 @@ export default function UserPosts() {
   const [input2, setInput2] = useState("");
   const [isError2, setError2] = useState(false);
   const [prog, setProg] = useState(false);
-  const [idmain,setId]=useState();
-
-
+  const [idmain, setId] = useState();
 
   let UserData = JSON.parse(localStorage.getItem("UserData"));
-     
 
-
-  function UpdateData(id,caption,post){
-          setInput1(caption);
-          setInput2(post);
-          setId(id);
-          onOpen1();
-
+  function UpdateData(id, caption, post) {
+    setInput1(caption);
+    setInput2(post);
+    setId(id);
+    onOpen1();
   }
 
   function handleInputChange1(e) {
@@ -95,7 +90,6 @@ export default function UserPosts() {
     setProg(false);
   }
 
-
   function handleClickUpdate() {
     if (input1.length < 5) {
       setError(true);
@@ -106,18 +100,14 @@ export default function UserPosts() {
       return;
     }
 
-
-
-
     axios
       .patch(`${process.env.REACT_APP_EXPRESS}/post/patch`, {
-        id:idmain,
-        userId:UserData._id,
+        id: idmain,
+        userId: UserData._id,
         caption: input1,
         post: input2,
       })
       .then((res) => {
-
         setProg(true);
         setTimeout(() => {
           onClose1();
@@ -137,8 +127,7 @@ export default function UserPosts() {
           });
         }, 2000);
 
-          setData(res.data);
-     
+        setData(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -189,8 +178,6 @@ export default function UserPosts() {
     );
   }
 
-
-
   return data.map((elem) => {
     const updatedAt = elem.updatedAt ? new Date(elem.updatedAt) : null;
 
@@ -235,10 +222,13 @@ export default function UserPosts() {
         </CardBody>
 
         <CardFooter className="Buttons-UserPosts">
-          <Button variant="ghost" leftIcon={<BiEdit />} onClick={()=>{
-                
-                 UpdateData(elem._id,elem.caption,elem.post)
-          }}>
+          <Button
+            variant="ghost"
+            leftIcon={<BiEdit />}
+            onClick={() => {
+              UpdateData(elem._id, elem.caption, elem.post);
+            }}
+          >
             Edit
           </Button>
 
@@ -294,11 +284,6 @@ export default function UserPosts() {
             </ModalContent>
           </Modal>
 
-
-
-
-
-
           <Button
             variant="ghost"
             leftIcon={<MdDeleteOutline />}
@@ -309,7 +294,6 @@ export default function UserPosts() {
             Delete
           </Button>
 
-          
           <Button variant="ghost" leftIcon={<BiShare />}>
             Share
           </Button>

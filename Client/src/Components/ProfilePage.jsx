@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import { Avatar, Divider,Box,AbsoluteCenter } from "@chakra-ui/react";
+import { Avatar, Divider, Box, AbsoluteCenter } from "@chakra-ui/react";
 import { FaUserAlt } from "react-icons/fa";
 import {
   FaMapMarkerAlt,
@@ -106,7 +106,7 @@ export default function ProfilePage() {
         <CreateP />
       </div>
 
-        <h1 className="Post-Name">Posts</h1>
+      <h1 className="Post-Name">Posts</h1>
 
       <div className="Profile-Three">
         <UserPosts />

@@ -3,13 +3,10 @@ import Register from "./Components/Register";
 import RouteSurf from "./Routes/Route";
 import { useEffect } from "react";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 function App() {
-     
-  let Navigate=useNavigate();
- 
+  let Navigate = useNavigate();
 
   let token = localStorage.getItem("token");
 
@@ -40,7 +37,6 @@ function App() {
   }, [token]);
 
   return <RouteSurf />;
-  
 }
 
 export default App;

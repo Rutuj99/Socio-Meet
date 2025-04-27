@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300);
 
 
-
 ::selection {
   background-color: rgba(0,0,0,0.2);
 }
@@ -39,9 +38,6 @@ a:hover {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
-
-
 
 
 #wrap {

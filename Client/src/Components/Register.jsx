@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {redirect, useNavigate} from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import {
   Input,
   InputGroup,
@@ -9,17 +9,17 @@ import {
   Button,
   Box,
 } from "@chakra-ui/react";
-import { useToast } from '@chakra-ui/react'
+import { useToast } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { Spinner } from '@chakra-ui/react'
+import { Spinner } from "@chakra-ui/react";
 
 export default function Register() {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
 
   const toast = useToast();
-  let Navigate=useNavigate();
+  let Navigate = useNavigate();
 
   let [fname, setfname] = useState("");
   let [lname, setlname] = useState("");
@@ -33,7 +33,7 @@ export default function Register() {
   let [Elocation, EsetLocation] = useState(false);
   let [Epass, EsetPass] = useState(false);
   let [error, setError] = useState(false);
-  let [spin,setSpin]=useState(false);
+  let [spin, setSpin] = useState(false);
 
   function handleRegister(e) {
     e.preventDefault();
@@ -80,56 +80,48 @@ export default function Register() {
           password: pass,
         })
         .then((res) => {
-
           toast({
-            title: 'Account created.',
+            title: "Account created.",
             description: "We've created your account for you.",
-            status: 'success',
+            status: "success",
             duration: 2000,
             isClosable: true,
-          })  
-             
-             setSpin(true);
-         
-             setTimeout(() => {
-              Navigate("/login");
-             },2000);
-         
-        
-        }).catch((err)=>{
+          });
 
-          
+          setSpin(true);
+
+          setTimeout(() => {
+            Navigate("/login");
+          }, 2000);
+        })
+        .catch((err) => {
           if (err && err.response && err.response.status === 500) {
-    // Server error (HTTP status 500)
-    // alert("Something went wrong on the server 500");
-      setError(err.response.data)
-             toast({
+            // Server error (HTTP status 500)
+            // alert("Something went wrong on the server 500");
+            setError(err.response.data);
+            toast({
               title: "Email already exists",
-              description:"Please login" ,
-              status: 'error',
+              description: "Please login",
+              status: "error",
               duration: 2000,
               isClosable: true,
-            })
-  }else {
-    // Network error or other cases
-    // alert("Network error or other issue");
-    Navigate("/404")
-  }
-
-          
-           
-        })
+            });
+          } else {
+            // Network error or other cases
+            // alert("Network error or other issue");
+            Navigate("/404");
+          }
+        });
     } catch (err) {
       setError(err.response.data);
       toast({
         title: "Email already exists",
         description: "Please login",
-        status: 'error',
+        status: "error",
         duration: 9000,
         isClosable: true,
-      })
+      });
     }
-
   }
 
   return (
@@ -246,28 +238,28 @@ export default function Register() {
             </div>
             <Button type="submit">Register</Button>
 
-            <h3  className="Register-Bottom" onClick={()=>{
-                 Navigate("/login")
-            }}>Already have an account?Login here</h3>
-           
+            <h3
+              className="Register-Bottom"
+              onClick={() => {
+                Navigate("/login");
+              }}
+            >
+              Already have an account?Login here
+            </h3>
           </form>
           <div className="spinner-one">
-           
-          {
-              spin && <Spinner
-              thickness='4px'
-              speed='0.65s'
-              emptyColor='gray.200'
-              color='rgb(134, 216, 208)'
-              size='xl'
-            />
-          }
+            {spin && (
+              <Spinner
+                thickness="4px"
+                speed="0.65s"
+                emptyColor="gray.200"
+                color="rgb(134, 216, 208)"
+                size="xl"
+              />
+            )}
           </div>
-          
         </div>
-       
       </div>
-     
     </div>
   );
 }

@@ -150,10 +150,10 @@ export default function AllPost() {
           </Button>
 
           <Button
-          className="comment-button"
+            className="comment-button"
             variant="ghost"
             leftIcon={<BiChat />}
-            style={{ backgroundColor: "rgb(246, 247, 248)"}}
+            style={{ backgroundColor: "rgb(246, 247, 248)" }}
             onClick={() => {
               handleComment(elem._id);
             }}

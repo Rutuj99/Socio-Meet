@@ -61,7 +61,6 @@ export default function CreateP() {
   let UserData = JSON.parse(localStorage.getItem("UserData"));
 
   function handleClick() {
-
     if (input1.length < 5) {
       setError(true);
       return;
@@ -97,15 +96,13 @@ export default function CreateP() {
             status: "success",
             duration: 2000,
             isClosable: true,
-            mt:"20px"
+            mt: "20px",
           });
-          
         }, 2000);
 
-        setTimeout(()=>{
-          window.location="/";
-        },3000)
-       
+        setTimeout(() => {
+          window.location = "/";
+        }, 3000);
       })
       .catch((err) => {
         console.log(err);

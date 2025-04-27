@@ -13,8 +13,8 @@ export default function RouteSurf() {
       <Route path="/" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/profile" element={<ProfilePage/>}/>
-      <Route path="/404" element={<Error404/>}/>
+      <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/404" element={<Error404 />} />
     </Routes>
   );
 }

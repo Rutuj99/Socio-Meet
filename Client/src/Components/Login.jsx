@@ -5,27 +5,27 @@ import {
   InputLeftElement,
   InputRightElement,
   Button,
-  Box,Spinner
+  Box,
+  Spinner,
 } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useToast } from '@chakra-ui/react';
+import { useToast } from "@chakra-ui/react";
 
 export default function Login() {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
-  const toast = useToast()
+  const toast = useToast();
 
   let Navigate = useNavigate();
- 
 
   let [email, setEmail] = useState("");
   let [pass, setPass] = useState("");
 
   let [Eemail, EsetEmail] = useState(false);
   let [Epass, EsetPass] = useState(false);
-  let  [spin,setSpin]=useState(false);
+  let [spin, setSpin] = useState(false);
 
   function handleRegister(e) {
     e.preventDefault();
@@ -50,44 +50,40 @@ export default function Login() {
           password: pass,
         })
         .then((res) => {
-          localStorage.setItem("token",res.data.token);
+          localStorage.setItem("token", res.data.token);
           toast({
-            title: 'Login Successfull.',
+            title: "Login Successfull.",
             description: "",
-            status: 'success',
+            status: "success",
             duration: 9000,
             isClosable: true,
-          })
+          });
 
-              
-             setSpin(true);
-      
-            setTimeout(()=>{
-              Navigate("/home")
-            },2000)
+          setSpin(true);
 
+          setTimeout(() => {
+            Navigate("/home");
+          }, 2000);
         })
         .catch((err) => {
-         
           toast({
             title: `${err.response.data}`,
-            status: 'error',
+            status: "error",
             duration: 2000,
             isClosable: true,
-          })
+          });
         });
     } catch (err) {
       toast({
         title: `${err.response.data}`,
-        status: 'error',
+        status: "error",
         duration: 2000,
         isClosable: true,
-      })
+      });
     }
   }
 
   return (
-    
     <div className="Register-Main">
       <div className="Register-One">
         <h1>SocioMeet</h1>
@@ -152,17 +148,16 @@ export default function Login() {
           </form>
 
           <div className="spinner-one">
-          {
-            spin && <Spinner
-            
-            thickness='4px'
-            speed='0.65s'
-            emptyColor='gray.200'
-            color='rgb(134, 216, 208)'
-            size='xl'
-          />
-        }
-        </div>
+            {spin && (
+              <Spinner
+                thickness="4px"
+                speed="0.65s"
+                emptyColor="gray.200"
+                color="rgb(134, 216, 208)"
+                size="xl"
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
