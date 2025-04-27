@@ -8,7 +8,6 @@ import { deletePost } from "../Controllers/post.controllers.js";
 import { updatePost,AddComment } from "../Controllers/post.controllers.js";
 
 
-
 // posting 
 postRoutes.post("/",async (req,res)=>{
 

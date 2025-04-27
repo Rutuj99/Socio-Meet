@@ -10,14 +10,12 @@ dotenv.config();
 app.use(cors());
 app.use(bodyParser.json());
 
-
 //  Routes
 app.use("/auth",authRoutes);
 app.use("/post",postRoutes);
 app.get("/",(req,res)=>{
         res.send("Working..")
 })
-
 
 Connect().then(()=>{
     app.listen(3002,()=>{

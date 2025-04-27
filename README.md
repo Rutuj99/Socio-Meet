@@ -3,6 +3,7 @@
 Sociomeet is a full-stack blog application with various features allowing users to create, edit, delete and view blog posts. It provides functionalities like user authentication, post creation, commenting, profile viewing, and more.
 
 
+
 ## Features
 
 - User Authentication: Users can sign up with a unique email address, and upon successful registration, they can log in using the same credentials. JWT tokens are generated for user verification during login.
@@ -14,7 +15,6 @@ Sociomeet is a full-stack blog application with various features allowing users 
 
 
 
-
 ## Tech Stack 
    [![My Skills](https://skillicons.dev/icons?i=react,nodejs,expressjs,mongodb,css)](https://skillicons.dev)  <img width="190px" height="50px"  src="https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/media/logo-colored@2x.png?raw=true"/>
 
@@ -23,11 +23,9 @@ Sociomeet is a full-stack blog application with various features allowing users 
 - Deployment: `Frontend on Vercel, Backend on Render`
 
 
-
 ## Deployment
 
  - [ www.sociomeet.com](https://socio-meet.vercel.app/)
-
 
 
 ## Screenshots

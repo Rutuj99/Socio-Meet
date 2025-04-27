@@ -21,10 +21,9 @@ export default function Middleware(req,res,next){
             }
             
 
+
     }
 
      res.status(500).send("Not a logged In user");
-
-    
     
 }

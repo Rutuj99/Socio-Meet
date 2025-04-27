@@ -3,8 +3,6 @@ import { RegisterControll,LoginControll } from "../Controllers/auth.controllers.
 import Middleware from "../Middleware/Middleware.js";
 let authRoutes=express.Router();
 
-
-
 authRoutes.post("/register",async (req,res)=>{
          
          try{

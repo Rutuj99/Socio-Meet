@@ -21,11 +21,11 @@ let PostSchema=new mongoose.Schema({
          type:String,
          required:true
       },
-      comment:[]
+      comment:[],
+      Likes:[]
 },{
   timestamps: true 
 });
-
 
 let Post=mongoose.model("post",PostSchema);
 export default Post;
