@@ -1,4 +1,3 @@
-
 # Sociomeet
 Sociomeet is a full-stack blog application with various features allowing users to create, edit, delete and view blog posts. It provides functionalities like user authentication, post creation, commenting, profile viewing, and more.
 
