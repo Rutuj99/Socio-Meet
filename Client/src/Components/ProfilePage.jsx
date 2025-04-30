@@ -105,9 +105,7 @@ export default function ProfilePage() {
       <div className="Profile-Two">
         <CreateP />
       </div>
-
       <h1 className="Post-Name">Posts</h1>
-
       <div className="Profile-Three">
         <UserPosts />
       </div>
